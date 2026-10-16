@@ -309,12 +309,6 @@ p {
   object-fit: contain;
 }
 
-.button.primary .button-icon,
-.button.ghost:hover .button-icon,
-.button.ghost:focus-visible .button-icon {
-  filter: brightness(0);
-}
-
 .button.ghost:hover,
 .button.ghost:focus-visible,
 .text-link:hover,
@@ -351,10 +345,21 @@ p {
   padding: 12px 10px;
   font-size: 0.72rem;
   letter-spacing: 0.1em;
+  color: var(--ink);
+  border-color: var(--line);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.button-row .button:hover,
+.button-row .button:focus-visible {
+  color: var(--ink);
+  border-color: var(--accent);
+  background: rgba(127, 200, 232, 0.08);
 }
 
 .button-row .button-icon {
   margin-right: 0;
+  filter: none;
 }
 
 .button-row .button:focus-visible {

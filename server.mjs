@@ -41,6 +41,7 @@ createServer((request, response) => {
 
   response.writeHead(200, {
     "Content-Type": types[extname(filePath).toLowerCase()] || "application/octet-stream",
+    "Cache-Control": "no-store",
   });
   createReadStream(filePath).pipe(response);
 }).listen(port, "127.0.0.1", () => {
