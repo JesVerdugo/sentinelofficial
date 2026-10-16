@@ -24,6 +24,7 @@ py -m http.server 8000
 - `styles.css` - responsive layout and visual styling
 - `script.js` - mobile menu and photo preview modal
 - `assets/photos/` - local images pulled from the current hosted site
+- `assets/icons/` - original Wix social/music icons and matching Instagram and merch store icons
 
 This is intentionally buildless, so it can be served by GitHub Pages, a static
 web server on a Zima box, nginx, Caddy, Apache, or any basic file server.
