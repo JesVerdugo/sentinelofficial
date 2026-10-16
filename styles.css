@@ -171,8 +171,8 @@ a {
 
 .nav-toggle {
   display: none;
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border: 1px solid var(--line);
   border-radius: 0;
   color: var(--ink);
@@ -192,6 +192,10 @@ a {
   margin: 0 auto;
   padding: 70px 0;
   border-bottom: 1px solid var(--line);
+}
+
+.section-band[id] {
+  scroll-margin-top: 110px;
 }
 
 .hero {
@@ -245,7 +249,7 @@ h2 {
 }
 
 h1 {
-  font-size: 3.9rem;
+  font-size: clamp(2rem, 4.2vw, 3.2rem);
 }
 
 h1 span {
@@ -319,12 +323,55 @@ p {
   background: var(--accent-strong);
 }
 
-.hero-actions,
-.button-row {
+.hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 28px;
+}
+
+.music-copy {
+  container-name: music;
+  container-type: inline-size;
+  min-width: 0;
+}
+
+.button-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.button-row .button {
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+  min-height: 52px;
+  padding: 12px 10px;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+}
+
+.button-row .button-icon {
+  margin-right: 0;
+}
+
+.button-row .button:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 3px;
+}
+
+@container music (min-width: 20rem) {
+  .button-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@container music (min-width: 42rem) {
+  .button-row {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 
 .quick-links {
@@ -534,7 +581,7 @@ p {
 
 @media (max-width: 1024px) {
   .header-inner {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: minmax(0, 1fr) auto;
   }
 
   .nav-toggle {
@@ -553,6 +600,31 @@ p {
   .site-header.is-open .social-bar {
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .site-header.is-open .primary-nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .primary-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    border: 1px solid var(--line);
+  }
+
+  .social-bar {
+    gap: 6px;
+    padding-bottom: 14px;
+  }
+
+  .social-bar a {
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
   }
 }
 
@@ -611,6 +683,11 @@ p {
     font-size: 1rem;
   }
 
+  .brand {
+    min-width: 0;
+    gap: 10px;
+  }
+
   .brand img {
     width: 70px;
     height: 50px;
@@ -625,7 +702,7 @@ p {
   }
 
   h1 {
-    font-size: 2.25rem;
+    font-size: clamp(1.5rem, 7.2vw, 2.25rem);
   }
 
   h2 {
@@ -637,7 +714,6 @@ p {
   }
 
   .hero-actions,
-  .button-row,
   .split-heading {
     align-items: stretch;
     flex-direction: column;
