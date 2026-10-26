@@ -28,3 +28,9 @@ py -m http.server 8000
 
 This is intentionally buildless, so it can be served by GitHub Pages, a static
 web server on a Zima box, nginx, Caddy, Apache, or any basic file server.
+
+The Our Music section includes Spotify's embedded album player and a compact
+player for "Last Moment of Clarity" below it. They provide playback controls
+without local audio files or API keys. The players require an internet connection,
+and Spotify determines playback availability for each listener. Update the album
+or track IDs in `index.html` to feature different releases.
