@@ -10,7 +10,7 @@ From this folder, the easiest local preview is:
 node server.mjs
 ```
 
-Then open http://127.0.0.1:8000/.
+
 
 If Python is installed normally on your machine, this also works:
 
