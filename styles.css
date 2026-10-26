@@ -520,8 +520,8 @@ p {
 }
 
 .link-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 1px;
   border: 1px solid var(--line);
   background: var(--line);
@@ -529,6 +529,8 @@ p {
 
 .link-list a,
 .link-list span {
+  flex: 1 1 calc((100% - 2px) / 3);
+  min-width: 0;
   min-height: 78px;
   padding: 24px 18px;
   color: var(--ink);
@@ -683,9 +685,13 @@ p {
   }
 
   .quick-links,
-  .link-list,
   .video-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .link-list a,
+  .link-list span {
+    flex-basis: calc((100% - 1px) / 2);
   }
 
   .photo-grid {
@@ -754,10 +760,14 @@ p {
   }
 
   .quick-links,
-  .link-list,
   .video-grid,
   .photo-grid {
     grid-template-columns: 1fr;
+  }
+
+  .link-list a,
+  .link-list span {
+    flex-basis: 100%;
   }
 
   .quick-links a,
